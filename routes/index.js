@@ -25,11 +25,9 @@ router.get('/createpoll', function(req, res, next){
 });
 
 router.post('/createpoll',function(req,res,next){
-  a2 = req.body.answer2;
-  a1 = req.body.answer1;
-  q = req.body.question;
-  
-  
+  question = req.body.question; 
+  answer1 = req.body.answer1;
+  answer2 = req.body.answer2;
   res.redirect('/');
 });
 
