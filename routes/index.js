@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET createpoll page. */
+router.get('/createpoll', function(req, res, next) {
+  res.render('createpoll');
+});
+
 module.exports = router;
