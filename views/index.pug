@@ -1,7 +1,16 @@
 extends layout
 
 block content
-  h1(class="title live") Choose!
-  h1= question
-  p= answer1
-  p= answer2
+  .wrapper
+    .box.a
+      h1= question
+    .box.a1
+      p= answer1
+        br
+        span#procent1 0
+        |  %
+    .box.a2
+      p= answer2
+        br
+        span#procent2 0
+        |  %
