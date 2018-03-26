@@ -1,14 +1,31 @@
 var express = require('express');
-var router = express.Router();
+var app = express.Router();
+var question, answer1, answer2;
+
+/* Bodyparser setup */
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+/* use bodyparser */
+app.use(bodyParser.json());
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+app.get('/', function(req, res, next) {
+  res.render('index', { answer2: a2, answer1: a1, question: q });
+  
 });
 
-/* GET createpoll page. */
-router.get('/createpoll', function(req, res, next) {
-  res.render('createpoll');
+/* GET createpoll page */
+app.get('/createpoll', function(req, res, next){
+  res.render('live', {title: "Create Poll"});
 });
 
-module.exports = router;
+/* POST createpoll page */
+app.post('/createpoll',function(req,res,next){
+  question = req.body.question;
+  answer1 = req.body.answer1;
+  answer2 = req.body.answer2;
+  res.redirect('/');
+});
