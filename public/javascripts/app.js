@@ -11,19 +11,20 @@ primus = Primus.connect(url, {
     }
 });
 
-document.getElementById("a1").addEventListener("click", function (e) {
+document.querySelector(".a1").addEventListener("click", function (e) {
+    console.log("click"); 
     primus.write({
         click: "Clicked"
     });
-    calculate("a");
+    getProcent("a");
     e.preventDefault();
 });
 
-document.getElementById("a2").addEventListener("click", function (e) {
+document.querySelector(".a2").addEventListener("click", function (e) {
     primus.write({
         click: "Clicked"
     });
-    calculate("b");
+    getProcent("b");
     e.preventDefault();
 });
 
@@ -41,7 +42,9 @@ primus.on("data", function message(data) {
 
 });
 
-function calculate(answer) {
+function getProcent(answer) {
+
+    console.log('in functie');
 
     total += 1;
 
