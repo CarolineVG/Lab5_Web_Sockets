@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1(class="title live") Typ here your question!
   
-  form(action="" method="post")
+  form(action="" method="post" id="main")
+    h1(class="title live") Typ here your question!
     p
         label(for='question') Question 
         input(type='text', name='question' id="question")
