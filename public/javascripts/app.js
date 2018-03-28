@@ -13,32 +13,18 @@ primus = Primus.connect(url, {
 
 document.querySelector(".a1").addEventListener("click", function (e) {
     console.log("click"); 
-    primus.write({
-        click: "Clicked"
-    });
-    getProcent("a");
+    primus.write("a");
     e.preventDefault();
 });
 
 document.querySelector(".a2").addEventListener("click", function (e) {
-    primus.write({
-        click: "Clicked"
-    });
-    getProcent("b");
+    primus.write("b");
     e.preventDefault();
 });
 
 primus.on("data", function message(data) {
-
-    //alert("data received");
-    var title = document.querySelector(".title");
-    title.innerHTML = question;
-
-
-    if (title) {
-
-        //title.innerHTML = "Yep";
-    }
+        // get procent 
+        getProcent(data); 
 
 });
 
